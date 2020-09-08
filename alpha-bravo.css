@@ -1,0 +1,155 @@
+:root {
+    --col_1: #fff;
+    --col_2: #333;
+
+    --rand_1: #006064;
+    --rand_2: #01579B;
+    --rand_3: #004D40;
+    --rand_4: #880E4F;
+    --rand_5: #4A148C;
+    --rand_6: #BF360C;
+    --rand_7: #33691E;
+    --rand_8: #AA00FF;
+    --rand_9: #0091EA;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@700&display=swap');
+
+body{
+    font-family: 'Hind Siliguri', sans-serif;
+    color: var(--col_2);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+h1{
+    font-family: 'Assistant', sans-serif;
+    margin: 0 0 20px 0;
+}
+
+input{
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    background-color: var(--col_1);
+    max-width: calc(100% - 80px);
+    border-color: transparent;
+    border-radius: 12px;
+    color: var(--col_2);
+    border-style: solid;
+    font-size: inherit;
+    text-align: center;
+    border-width: 2px;
+    margin: 0 auto;
+    display: block;
+    padding: 15px;
+    width: 360px;
+}
+
+input:focus{
+    border-color: #3BA59C;
+    outline: none;
+}
+
+/* Header */
+header{
+    background: linear-gradient(45deg, #191654, #43C6AC);
+    color: var(--col_1);
+    text-align: center;
+    padding: 80px 0;
+
+}
+
+header h1{
+    text-shadow: 0 0 8px rgba(0,0,0,0.1);
+    line-height: 3rem;
+    font-size: 3rem;
+    margin: 0;
+}
+
+header p{
+    margin-bottom: 80px;
+}
+
+/* Main */
+main{
+    text-align: center;
+    max-width: 1024px;
+    padding: 40px 0;
+    margin: 0 auto;
+}
+
+main span{
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    display: block;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        top: -28px;
+    }
+}
+
+main section p{
+    position: relative;
+}
+
+main section p:before{
+    animation-iteration-count: infinite;
+    border-left: solid 2px var(--col_2);
+    border-top: solid 2px var(--col_2);
+    animation-direction: alternate;
+    animation-duration: 800ms;
+    transform: rotate(45deg);
+    animation-name: fadein;
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+    height: 12px;
+    content: "";
+    width: 12px;
+    top: -20px;
+    opacity: 0;
+    left: 50%;
+}
+
+ul{
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: 0 0 40px 0;
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+li{
+    background-color: var(--rand_1);
+    text-transform: capitalize;
+    margin: 0 10px 20px 10px;
+    color: var(--col_1);
+    border-radius: 6px;
+    padding: 15px 30px;
+    font-size: 1.4rem;
+    min-width: 100px;
+    display: table;
+}
+
+li small{
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+    display: block;
+}
+
+li small:after{
+    border: solid 1px var(--col_1);
+    margin: 10px auto;
+    display: block;
+    opacity: 0.4;
+    content: "";
+    width: 20px;
+}
