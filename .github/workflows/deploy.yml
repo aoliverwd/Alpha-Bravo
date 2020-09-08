@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  deploy_job:
+    runs-on: ubuntu-latest
+    name: deploy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy Website on hosting
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: ${{ secrets.HOSTING_USER }} 
+          server: ${{ secrets.HOSTING_IP }} 
+          local_path: './*'
+          remote_path: ${{ secrets.HOSTING_PATH }} 
+          args: '-o ConnectTimeout=5'
