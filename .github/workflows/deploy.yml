@@ -4,17 +4,20 @@ on:
       - master
 
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  deploy:
+    name: FTP Deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master      
-    - name: FTP-Deploy-Action
+    - uses: actions/checkout@master
+    - name: Cleanup
+      run:  |
+        rm .gitignore
+        rm .jshintrc
+        rm -rf .git
+        rm -rf .github
+    - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
       env:
         FTP_SERVER: ${{ secrets.FTP_SERVER }}
         FTP_USERNAME: ${{ secrets.FTP_USER }}
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-        #LOCAL_DIR: ./
-        #METHOD: sftp
-        #PORT: 22
